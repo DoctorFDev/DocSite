@@ -32,3 +32,33 @@ function moveBackground() {
 
      moveBackground();
 */
+
+document.addEventListener("DOMContentLoaded", function() {
+    const changeBtn = document.getElementById("changeBtn");
+    const background = document.querySelector(".background");
+    const container = document.querySelector(".main-container");
+    let flag = false;
+    
+    changeBtn.addEventListener("click", function() {
+
+        if (flag === false) {
+            const otherBackground = 'url("static/bg.png")';
+            const otherColor = '#000000'
+            const  otherMainColor = '#FFFFFF'
+        
+            background.style.backgroundImage = otherBackground;
+            container.style.backgroundColor = otherColor;
+            document.body.style.color = otherMainColor;
+            flag = true;
+        } else if (flag === true) {
+            const otherBackground = 'url("static/bg_alt.png")';
+            const otherColor = '#FFFFFF'
+            const otherMainColor = '#000000'
+        
+            background.style.backgroundImage = otherBackground;
+            container.style.backgroundColor = otherColor;
+            document.body.style.color = otherMainColor;
+            flag = false;
+        }
+    });
+});

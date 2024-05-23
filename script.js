@@ -1,4 +1,3 @@
-/*
 const background = document.querySelector('.background');
 
 let currentPosition = 0;
@@ -22,6 +21,7 @@ function moveBackground() {
         if (timeoutRight > 5) {
             timeoutRight -= 0.1;
         }
+        
         } else if (currentPosition === 0) {
             direction = 'right';
             if (timeoutLeft > 5) {
@@ -31,7 +31,6 @@ function moveBackground() {
     }
 
      moveBackground();
-*/
 
 document.addEventListener("DOMContentLoaded", function() {
     const changeBtn = document.getElementById("changeBtn");
@@ -42,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
     changeBtn.addEventListener("click", function() {
 
         if (flag === false) {
-            const otherBackground = 'url("bg.png")';
+            const otherBackground = 'url("static/bg.png")';
             const otherColor = '#000000'
             const  otherMainColor = '#FFFFFF'
         
@@ -51,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function() {
             document.body.style.color = otherMainColor;
             flag = true;
         } else if (flag === true) {
-            const otherBackground = 'url("bg_alt.png")';
+            const otherBackground = 'url("static/bg_alt.png")';
             const otherColor = '#FFFFFF'
             const otherMainColor = '#000000'
         

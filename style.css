@@ -1,7 +1,7 @@
 body {
     font-family: "Edu TAS Beginner", cursive;
+    padding: 12% 0;
     margin: 0;
-    padding: 0;
     overflow: hidden;
     transition: color 0.5s ease;
 }
@@ -9,17 +9,18 @@ body {
 .main-container {
     position: relative;
     margin: auto;
-    top: 30vh;
-    width: 35%;
-    height: 35%;
+    width: 50%;
+    max-width: 700px;
+    height: auto;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #FFFFFF;
-    border-radius: 8px;
+    border-radius: calc(0.25em + 0.5vw);
     flex-direction: column;
     transition: background-color 0.5s ease;
+    padding: 20px;
 }
 
 .background {
@@ -29,7 +30,7 @@ body {
     width: 100%;
     height: 100%;
     background-size: contain;
-    background-image: url("bg_alt.png");
+    background-image: url("static/bg_alt.png");
     transition: background-image 0.5s ease;
 }
 
@@ -64,11 +65,11 @@ body {
 .button {
     height: 25%;
     width: 20%;
-    font-size: 20px;
+    font-size: 1.2em;
     font-family: "Edu TAS Beginner", cursive;
     background-color: #FFB4B4;
     border: none;
-    border-radius: 5px;
+    border-radius: calc(0.1em + 0.1vw);
     color: #FFFFFF;
     transition: background-color 0.3s;
 }
@@ -82,8 +83,27 @@ body {
 }
 
 .main-text {
-   font-size: 23px;
+   font-size: 1.5em;
    flex-grow: 1;
    align-self: center;
    margin: 2%;
+}
+
+.head-text {
+    font-size: 2em;
+    align-self: center;
+}
+
+@media only screen and (max-width: 768px) {
+    .main-text {
+        font-size: 0.8em;
+    }
+
+    .button {
+        font-size: 0.5em;
+    }
+
+    .head-text {
+        font-size: 1.1em;
+    }
 }

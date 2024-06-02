@@ -5,32 +5,21 @@ let direction = 'right';
 let timeoutLeft = 20;
 let timeoutRight = 20;
 
-function moveBackground() {
-    if (direction === 'left') {
-        currentPosition--;
-        setTimeout(moveBackground, timeoutLeft);
-    } else {
-        currentPosition++;
-        setTimeout(moveBackground, timeoutRight);
+
+window.addEventListener('DOMContentLoaded', () => {
+    const background = document.getElementById('infinite-background');
+
+    function moveBackground() {
+      let currentOffset = parseInt(getComputedStyle(background).backgroundPositionX);
+  
+      currentOffset++;
+  
+      background.style.backgroundPositionX = currentOffset + 'px';
+  
+      requestAnimationFrame(moveBackground);
     }
-
-     background.style.backgroundPositionX = currentPosition + 'px';
-
-    if (currentPosition === background.clientWidth / 2) {
-        direction = 'left';
-        if (timeoutRight > 5) {
-            timeoutRight -= 0.1;
-        }
-        
-        } else if (currentPosition === 0) {
-            direction = 'right';
-            if (timeoutLeft > 5) {
-                timeoutLeft -= 0.1;
-            }
-        }
-    }
-
-     moveBackground();
+    moveBackground();
+});
 
 document.addEventListener("DOMContentLoaded", function() {
     const changeBtn = document.getElementById("changeBtn");
@@ -41,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
     changeBtn.addEventListener("click", function() {
 
         if (flag === false) {
-            const otherBackground = 'url("bg.png")';
+            const otherBackground = 'url("static/bg.png")';
             const otherColor = '#000000'
             const  otherMainColor = '#FFFFFF'
         
@@ -50,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
             document.body.style.color = otherMainColor;
             flag = true;
         } else if (flag === true) {
-            const otherBackground = 'url("bg_alt.png")';
+            const otherBackground = 'url("static/bg_alt.png")';
             const otherColor = '#FFFFFF'
             const otherMainColor = '#000000'
         

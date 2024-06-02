@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
     changeBtn.addEventListener("click", function() {
 
         if (flag === false) {
-            const otherBackground = 'url("static/bg.png")';
+            const otherBackground = 'url("bg.png")';
             const otherColor = '#000000'
             const  otherMainColor = '#FFFFFF'
         
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
             document.body.style.color = otherMainColor;
             flag = true;
         } else if (flag === true) {
-            const otherBackground = 'url("static/bg_alt.png")';
+            const otherBackground = 'url("bg_alt.png")';
             const otherColor = '#FFFFFF'
             const otherMainColor = '#000000'
         

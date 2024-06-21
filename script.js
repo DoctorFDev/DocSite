@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const changeBtn = document.getElementById("changeBtn");
     const background = document.querySelector(".background");
     const container = document.querySelector(".main-container");
+    const link = document.querySelector(".a-itchio");
     let flag = false;
     
     changeBtn.addEventListener("click", function() {
@@ -36,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
             background.style.backgroundImage = otherBackground;
             container.style.backgroundColor = otherColor;
+            link.style.color = otherMainColor;
             document.body.style.color = otherMainColor;
             flag = true;
         } else if (flag === true) {
@@ -45,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
             background.style.backgroundImage = otherBackground;
             container.style.backgroundColor = otherColor;
+            link.style.color = otherMainColor;
             document.body.style.color = otherMainColor;
             flag = false;
         }
